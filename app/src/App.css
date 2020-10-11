@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #282c34;
+}
+
+.table-component { 
+  color: white;
+}
+
+.table-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+}
+
+.tweets_counter {
+  margin-right: 3em;
+}
+
+.list-container {
+  margin-right: 1em;
+  text-align: left;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.search-area {
+  width: 50%;
+  border-width:0.5pt;
+  background-color:rgb(199, 199, 199);
+  font-style:italic; 
+  border-right-width:0.5pt;
+  border-style:solid
+}
+
+.refresh-bar {
+  width: 50%;
+  flex-direction: row;
+  display: flex;
+}
+
+.refresh-bar > input {
+  margin-right: 10px;
+}
