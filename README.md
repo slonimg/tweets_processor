@@ -6,7 +6,6 @@ The reason for this is to enable quick response to a react consumer application.
  
 ~~~
 source venv/bin/activate
-pip install requirements.txt
 cd api
 flask run
 ~~~
@@ -34,6 +33,7 @@ and the results could be read by the Flask application
 A react consumer application that shows the streaming consumer data. 
 ~~~
 cd app
+npm install
 npm start
 ~~~
 
