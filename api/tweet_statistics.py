@@ -46,20 +46,14 @@ class TweetsStatistics:
                 counter.pop(word, None)
 
         self._words.update(counter)
-        if self.tweets_processed % self.top_refresh_interval == 0:
-            self.top_words = self._words.most_common(10)
 
     def update_users(self, username):
         d = {username: 1}
         self._users.update(d)
-        if self.tweets_processed % self.top_refresh_interval == 0:
-            self.top_users = self._users.most_common(10)
 
     def update_hashtags(self, hashtags_text):
         hashtags = {h['text']: 1 for h in hashtags_text}
         self._hashtags.update(hashtags)
-        if self.tweets_processed % self.top_refresh_interval == 0:
-            self.top_hashtags = self._hashtags.most_common(10)
 
     def process_tweet(self, tweet_json):
         if 'text' not in tweet_json:
@@ -70,6 +64,11 @@ class TweetsStatistics:
         self.update_users(tweet_json['user']['screen_name'])
         self.update_hashtags(tweet_json['entities']['hashtags'])
         self.tweets_processed += 1
+
+        if self.tweets_processed % self.top_refresh_interval == 0:
+            self.top_hashtags = self._hashtags.most_common(10)
+            self.top_users = self._users.most_common(10)
+            self.top_words = self._words.most_common(10)
 
     def get_tweets_processed_per_second(self):
         seconds_passed = time.time() - self._start_time
