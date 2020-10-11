@@ -43,4 +43,4 @@ npm start
 
 
 #### General Notes
-The node_modules and python venv were pushed for simplicity
+The python venv was pushed for simplicity
